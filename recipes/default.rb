@@ -13,9 +13,20 @@ node['vim']['packages'].each{|value|
 	end
 }
 
-cookbook_file "/etc/vimrc" do
+directory '/etc/vim' do
+	owner 'root'
+	group 'root'
+	mode 00755
+end
+
+cookbook_file "/etc/vim/vimrc" do
 	owner "root"
 	group "root"
 	mode "0644"
 	source "vimrc"
+end
+
+link '/etc/vimrc' do
+	to '/etc/vim/vimrc'
+	link_type :symbolic
 end
