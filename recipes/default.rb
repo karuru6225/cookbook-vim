@@ -19,11 +19,11 @@ directory '/etc/vim' do
 	mode 00755
 end
 
-cookbook_file "/etc/vim/vimrc" do
+remote_file "/etc/vim/vimrc" do
 	owner "root"
 	group "root"
 	mode "0644"
-	source "vimrc"
+	source "https://raw.githubusercontent.com/karuru6225/dotfiles/master/.vimrc"
 end
 
 link '/etc/vimrc' do
