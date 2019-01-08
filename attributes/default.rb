@@ -1,5 +1,5 @@
 case platform
-	when "centos"
+	when "centos", "amazon", "redhat"
 		default['vim']['packages'] = [
 			"vim-enhanced"
 		]
